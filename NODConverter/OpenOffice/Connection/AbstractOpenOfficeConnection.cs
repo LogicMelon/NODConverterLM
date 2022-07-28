@@ -28,7 +28,6 @@ namespace NODConverter.OpenOffice.Connection
         [MethodImpl(MethodImplOptions.Synchronized)]
         public virtual void Connect()
         {
-            Console.WriteLine("connecting");
             try
             {
                 EnvUtils.InitUno();
@@ -66,7 +65,6 @@ namespace NODConverter.OpenOffice.Connection
         public virtual void Disconnect()
         {
             SocketUtils.Disconnect();
-            Console.WriteLine("disconnecting");
             _expectingDisconnection = true;
             _bridgeComponent.dispose();
         }
